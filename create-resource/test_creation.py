@@ -27,6 +27,6 @@ def test_service_creation():
   svc_resp = services.create(body=setup_svc(), namespace="test-ns")
   assert svc_resp.metadata.name == "my-service"
   namespaces.delete(name="test-ns")
-  time.sleep(3)
+  time.sleep(10)
   assert len(namespaces.get(field_selector="metadata.name=test-ns").items) == 0
 
